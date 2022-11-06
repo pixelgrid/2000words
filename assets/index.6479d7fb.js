@@ -3,12 +3,12 @@
     ${t.history.map(([e,a])=>w(e,a)).join("")}
     </header>
     <main>
-      <div id=word>${o.word}</div>
-      <div id=dutch class="${t.mode===s.DUTCH?"blurred":""}">${o.dutch}</div>
-      <div id=english class="${t.mode===s.ENGLISH?"blurred":""}">${o.english}</div>
+      <div id=word><img src="./assets/book.png" /> ${o.word}</div>
+      <div id=dutch><img src="./assets/nl.png" /> <span class="${t.mode===s.DUTCH?"blurred":""}">${o.dutch}</span></div>
+      <div id=english class="${t.mode===s.ENGLISH?"blurred":""}"><img src="./assets/gb.png" />${o.english}</div>
     </main>
     <footer>
-      <button class="outcome correct">\u{1F525}</button>
-      <button class="outcome wrong">\u274C</button>
+      <button class="outcome correct">\u{1F525}I know this</button>
+      <button class="outcome wrong">\u274C Nope</button>
     </footer>
   `}function p(){o=l[t.index]}function m(){localStorage.setItem(u,JSON.stringify(t))}function v(e){t.total++,t.index++,t.correct+=e?1:0,t.history.push([t.index,e]),m()}document.body.addEventListener("click",function(e){if(e.target.matches("button")){const a=e.target.classList.contains("correct");v(a),p(),c()}e.target.matches(".blurred")&&e.target.classList.toggle("blurred")});function k(){c()}k();

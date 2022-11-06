@@ -1,5 +1,8 @@
 import './style.css'
 import words from './2000_words.json'
+import bookImgSrc from './assets/book.png'
+import gbImgSrc from './assets/gb.png'
+import nlImgSrc from './assets/nl.png'
 
 const MODES = {
   DUTCH: 'nl',
@@ -29,9 +32,9 @@ function render(){
     ${state.history.map(([index, correct]) => getHistoryTile(index, correct)).join("")}
     </header>
     <main>
-      <div id=word><img src="./assets/book.png" /> ${WORD.word}</div>
-      <div id=dutch><img src="./assets/nl.png" /> <span class="${state.mode === MODES.DUTCH ? 'blurred' : ''}">${WORD.dutch}</span></div>
-      <div id=english class="${state.mode === MODES.ENGLISH ? 'blurred' : ''}"><img src="./assets/gb.png" />${WORD.english}</div>
+      <div id=word><img src="${bookImgSrc}" /> ${WORD.word}</div>
+      <div id=dutch><img src="${nlImgSrc}" /> <span class="${state.mode === MODES.DUTCH ? 'blurred' : ''}">${WORD.dutch}</span></div>
+      <div id=english class="${state.mode === MODES.ENGLISH ? 'blurred' : ''}"><img src="${gbImgSrc}" />${WORD.english}</div>
     </main>
     <footer>
       <button class="outcome correct">🔥I know this</button>

@@ -29,13 +29,13 @@ function render(){
     ${state.history.map(([index, correct]) => getHistoryTile(index, correct)).join("")}
     </header>
     <main>
-      <div id=word>${WORD.word}</div>
-      <div id=dutch class="${state.mode === MODES.DUTCH ? 'blurred' : ''}">${WORD.dutch}</div>
-      <div id=english class="${state.mode === MODES.ENGLISH ? 'blurred' : ''}">${WORD.english}</div>
+      <div id=word><img src="./assets/book.png" /> ${WORD.word}</div>
+      <div id=dutch><img src="./assets/nl.png" /> <span class="${state.mode === MODES.DUTCH ? 'blurred' : ''}">${WORD.dutch}</span></div>
+      <div id=english class="${state.mode === MODES.ENGLISH ? 'blurred' : ''}"><img src="./assets/gb.png" />${WORD.english}</div>
     </main>
     <footer>
-      <button class="outcome correct">🔥</button>
-      <button class="outcome wrong">❌</button>
+      <button class="outcome correct">🔥I know this</button>
+      <button class="outcome wrong">❌ Nope</button>
     </footer>
   `;
 }
